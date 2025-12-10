@@ -2,10 +2,15 @@
   "name": "task-manager-api-client",
   "version": "1.0.0",
   "description": "Task Manager API Client",
-  "main": "index.js",
+  "main": "src/main.js",
   "repository": "https://github.com/mmanueljoe/taskManagerAPIClient.git",
   "author": "mmanueljoe <emmanuelletsu18@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/main.js",
+    "lint": "eslint ."
+  },
+
   "devDependencies": {
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.1",
