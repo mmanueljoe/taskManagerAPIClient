@@ -1,7 +1,22 @@
-import { APIClient } from './api.js';
-import { Task, PriorityTask, User } from './models.js';
-import * as processor from './taskProcessor.js';
+import { TaskManager } from "./taskManager.js";
+import { runCLI } from "./cli.js";
 
+async function main() {
+    const manager = new TaskManager();
 
-APIClient
+    // load using async/await + promise.all
 
+    try{
+        await manager.load({useCache: true});
+    }catch(err){
+        console.error('Failed to load data: ', err.message);
+        process.exit(1);
+    }
+
+    await runCLI(manager);
+}
+
+main().catch(err => {
+    console.log('Fatal: ', err.message);
+    process.exit(1);
+});

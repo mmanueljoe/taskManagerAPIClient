@@ -1,4 +1,4 @@
-import { use } from "react";
+
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 

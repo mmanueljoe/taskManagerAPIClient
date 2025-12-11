@@ -1,7 +1,7 @@
 export class Task{
     constructor({id, title, completed, userId}){
         this.id = id;
-        this.title = title;
+        this.title = typeof title === 'string' ? title : String(title ?? '');
         this.completed = !!completed;
         this.userId = userId;
         this.timeStamp = new Date(Date.now() - Math.floor(Math.random() * 14) * 86400000);
@@ -89,5 +89,12 @@ export class User{
         return this.tasks.filter((task) => {
             task.getStatus().startsWith(status);
         });
+    }
+
+    label(){
+        return `
+            ${this.name ?? 'Unknown'}
+            (@${this.username ?? 'user' + this.id})
+        `;
     }
 }
