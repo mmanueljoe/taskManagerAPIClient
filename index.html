@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager - Web UI</title>
+  </head>
+  <body>
+    <header>
+        
+        <h1>Task Manager - Web UI</h1>
+        <p class="muted">
+          Minimal interface to visualize JSONPlaceholder tasks using ES6 modules,
+          async/await, and OOP
+        </p>
+    </header>
+
+    <main>
+        <section class="toolbar">
+            <button id="load">Load Data</button>
+            <button id="all">All Tasks</button>
+            <label for="userSelect">
+                By User:
+                <select name="" id="userSelect"></select>
+            </label>
+            <button id="stats">Statistics</button>
+            <button>Completed</button>
+            <button>Pending</button>
+            <input id="searchInput" type="text" placeholder="Search keywords">
+            <button>Search</button>
+            <button>Leaderboard</button>
+            <button>Tags</button>
+        </section>
+
+        <section id="panel">
+            <p>
+                Click <strong>Load Data</strong> to begin
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <small>
+            Data from <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> runs entirely in your browser
+        </small>
+    </footer>
+
+    <script src="./src/main.js ">
+
+    </script>
+  </body>
+</html>
