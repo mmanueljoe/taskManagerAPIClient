@@ -138,7 +138,7 @@ export class UI {
     }
 
     const rowsInfo = rows.map((row) => 
-        `<tr><td>#${row.id}</td><td>${row.name} (@${row.username})</td><td>${row.rate}%</td></tr>`
+        `<tr><td>#${row.id}</td><td>${row.name}</td><td>${row.rate}%</td></tr>`
     ).join('');
 
     this.renderInfo(
@@ -172,11 +172,21 @@ export class UI {
         return;
     }
 
+    const maxTags = 20;
+    const displayTags = list.sort().slice(0, maxTags);
+    const remaining = list.length - maxTags;
+
     this.renderInfo(`
-        <h3>Tags</h3>
-        <p>${list.sort().join(',')}</p>
+        <div class='card'>
+            <h3>Tags (${list.length})</h3>
+            <div class="tags-container">
+                ${displayTags.map(tag => `<span class="tag-badge">${tag}</span>`).join('')}
+                ${remaining > 0 ? `<span class="tag-badge tag-more">+${remaining} more</span>` : ''}
+            </div>
+        </div>
     `);
-  }
+}
+
 
   // event wiring
   bindActions(callbacks){
