@@ -34,4 +34,26 @@ npx http-server . -p 8080
 - Add build/test scripts to `package.json` as needed
 
 
-![Task Manager UI](./src/image/screenshot1.png)
+## Screenshots
+
+![Task Manager UI](./src/image/initial.png)
+Task Manager UI
+
+
+![All Tasks](./src/image/loadData.png)
+All Tasks
+
+![Completed Tasks](./src/image/completed.png)
+Completed Tasks
+
+![Pending Tasks](./src/image/pending.png)
+Pending Tasks
+
+![Filter by a user](./src/image/filterbyUser.png)
+Filter by a user
+
+![Task Leaderboard](./src/image/leaderboard.png)
+Task Leaderboard
+
+![Statistics](./src/image/stattistics.png)
+Statistics

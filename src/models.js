@@ -31,7 +31,7 @@ export class Task{
 
 export class PriorityTask extends Task{
     constructor({id, title, completed, userId, priority='medium', dueDate = null}){
-        super(id, title, completed, userId);
+        super({id, title, completed, userId});
         this.priority = priority;
         this.dueDate = dueDate ? new Date(dueDate) : null;
     }

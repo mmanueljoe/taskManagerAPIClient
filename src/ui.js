@@ -53,13 +53,7 @@ export class UI {
       `<option value=''>
             (select user)
         </option>` +
-      users
-        .map(
-          (user) => `<option value='${user.id}>
-            #${user.id} ${user.name}
-        </option>'`
-        )
-        .join("");
+      users.map((user) => `<option value='${user.id}'>#${user.id} ${user.name}></option>`).join("");
   }
 
   renderTasks(tasks, title = "Tasks") {
@@ -73,8 +67,12 @@ export class UI {
       return;
     }
 
+    let limit = 50;
+    let noOfTasks = tasks.length;
+    let remainingTasks = noOfTasks - 50
+
     const cards = tasks
-      .slice(0, 50)
+      .slice(0, limit)
       .map((task) => {
         const statusClass = task.completed
           ? "Completed"
@@ -98,6 +96,7 @@ export class UI {
             <h3>${title}</h3>
             <div class='cards'>
                 ${cards}
+                ${remainingTasks > 0 ? `<span class="tag-badge tag-more">+${remainingTasks} more</span>` : ''}
             </div>    
         `);
   }
