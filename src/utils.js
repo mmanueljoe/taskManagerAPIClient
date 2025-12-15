@@ -1,5 +1,5 @@
 export function getElementByType(type, selector){
-    switch(type.toLowerCase(type)){
+    switch(type.toLowerCase()){
         case 'id': {
             return document.getElementById(selector);
         }
@@ -8,13 +8,12 @@ export function getElementByType(type, selector){
             return document.getElementsByClassName(selector);
         }
 
-        case type.toLowerCase() === 'tag': {
+        case 'tag': {
             return document.getElementsByTagName(selector);
         }
 
         default: {
-            console.log('Invalid selector type!');
-            break;
+            return null;
         }
     }
 

@@ -35,8 +35,8 @@ export class UI {
   showError(message) {
     this.renderInfo(
       `<div class='card'>
-                <p style='style="color:#ef4444"'>Error: ${message}</p>
-            </div>`
+                <p style="color:#ef4444">Error: ${message}</p>
+        </div>`
     );
   }
 
@@ -69,16 +69,16 @@ export class UI {
 
     let limit = 50;
     let noOfTasks = tasks.length;
-    let remainingTasks = noOfTasks - 50
+    let remainingTasks = noOfTasks - limit;
 
     const cards = tasks
       .slice(0, limit)
       .map((task) => {
         const statusClass = task.completed
-          ? "Completed"
+          ? "completed"
           : task.isOverdue()
-          ? "Overdue"
-          : "Pending";
+          ? "overdue"
+          : "pending";
         return `
                     <div class='card'>
                         <div class='status'>
@@ -137,7 +137,7 @@ export class UI {
     }
 
     const rowsInfo = rows.map((row) => 
-        `<tr><td>#${row.id}</td><td>${row.name}</td><td>${row.rate}%</td></tr>`
+        `<tr><td>#${row.id}</td><td>${row.name} (@${row.username})</td><td>${row.rate}%</td></tr>`
     ).join('');
 
     this.renderInfo(

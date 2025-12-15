@@ -43,21 +43,12 @@ export class PriorityTask extends Task{
         return Date.now() > this.dueDate.getTime() && !this.completed;
     }
 
-    getStatus(){
-        return `
-            ${super.getStatus()}
-            [${this.priority}] ${this.isOverdue ? 'Overdue' : ''}
-
-        `;
-    }
-
-    // check this functions
     
-    // getStatus() {
-    //     const base = super.getStatus();
-    //     const overdue = this.isOverdue() ? ' (Overdue)' : '';
-    //     return `${base} [${this.priority}]${overdue}`;
-    // }
+    getStatus() {
+        const base = super.getStatus();
+        const overdue = this.isOverdue() ? ' (Overdue)' : '';
+        return `${base} [${this.priority}]${overdue}`;
+    }
 
     toLine() {
         return `#${this.id} [User ${this.userId}] ${this.getStatus()} — ${this.title}`;
@@ -66,10 +57,11 @@ export class PriorityTask extends Task{
 }
 
 export class User{
-    constructor({id, name, email}){
+    constructor({id, name, email, username}){
         this.id = id;
         this.name = name;
         this.email = email;
+        this.username = username;
         this.tasks = [];
     }
 
@@ -87,7 +79,7 @@ export class User{
 
     getTasksByStatus(status = 'Completed'){
         return this.tasks.filter((task) => {
-            task.getStatus().startsWith(status);
+            return task.getStatus().startsWith(status);
         });
     }
 

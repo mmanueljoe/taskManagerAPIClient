@@ -25,15 +25,15 @@ export class TaskManager {
                 this.api.fetchTodos({useCache})
             ]);
 
-            this.users = usersRaw.map((user) => new User(user));
+            this.users = usersRaw.map(({id, name, email, username}) => new User({id, name, email, username}));
             this.tasks = toTaskInstances(todosRaw, {asPriority: true});
 
             // attach tasks to users
             const grouped = groupByUser(this.tasks);
 
             this.users.forEach(
-                user => {(grouped.get(user.id) ?? [])
-                    .forEach(task => user.addTask(task));
+                user => {
+                    (grouped.get(user.id) ?? []).forEach(task => user.addTask(task));
             });
 
             this.loaded = true;
