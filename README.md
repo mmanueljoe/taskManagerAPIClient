@@ -10,9 +10,6 @@ A lightweight JavaScript client for interacting with a task/todo API, featuring 
 - **Browser UI** (`index.html`) – Minimal demo interface (no dependencies)
 
 ## Quick Start
-
-**Requirements:** Node.js v16+
-
 ```bash
 # Install dependencies
 npm install
@@ -27,14 +24,16 @@ npx http-server . -p 8080
 
 ## Development
 
-- **Source:** (`src/`) folder
-
-- **Linting:** `eslint.config.mjs`
-
-- Add build/test scripts to `package.json` as needed
+### Running Tests
 
 
-## Screenshots
+
+## Testing
+
+### Lessons Learned: Writing Tests
+
+
+
 
 ![Task Manager UI](./src/image/initial.png)
 Task Manager UI
