@@ -32,3 +32,6 @@ npx http-server . -p 8080
 - **Linting:** `eslint.config.mjs`
 
 - Add build/test scripts to `package.json` as needed
+
+
+![Task Manager UI](./src/image/screenshot1.png)
