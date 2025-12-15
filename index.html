@@ -3,50 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Manager - Web UI</title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Task Manager</title>
   </head>
   <body>
-    <header>
-        
-        <h1>Task Manager - Web UI</h1>
+    <div class="container">
+      <header>
+        <h1>Task Manager</h1>
         <p class="muted">
-          Minimal interface to visualize JSONPlaceholder tasks using ES6 modules,
-          async/await, and OOP
+          Manage and visualize tasks with a clean, minimal interface
         </p>
-    </header>
+      </header>
 
-    <main>
+      <main>
         <section class="toolbar">
-            <button id="load">Load Data</button>
+          <div class="toolbar-group">
+            <button id="load" class="btn-primary">Load Data</button>
             <button id="all">All Tasks</button>
-            <label for="userSelect">
-                By User:
-                <select name="" id="userSelect"></select>
+            <button id="completed">Completed</button>
+            <button id="pending">Pending</button>
+          </div>
+          
+          <div class="toolbar-group">
+            <label for="userSelect" class="select-wrapper">
+              <span>Filter by User:</span>
+              <select id="userSelect"></select>
             </label>
+          </div>
+
+          <div class="toolbar-group">
+            <div class="search-wrapper">
+              <input id="searchInput" type="text" placeholder="Search tasks...">
+              <button id="searchBtn">Search</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
             <button id="stats">Statistics</button>
-            <button>Completed</button>
-            <button>Pending</button>
-            <input id="searchInput" type="text" placeholder="Search keywords">
-            <button>Search</button>
-            <button>Leaderboard</button>
-            <button>Tags</button>
+            <button id="leaderboard">Leaderboard</button>
+            <button id="tagsBtn">Tags</button>
+          </div>
         </section>
 
-        <section id="panel">
-            <p>
-                Click <strong>Load Data</strong> to begin
-            </p>
+        <section id="panel" class="panel">
+          <p class="empty-state">
+            Click <strong>Load Data</strong> to begin
+          </p>
         </section>
-    </main>
+      </main>
 
-    <footer>
+      <footer>
         <small>
-            Data from <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> runs entirely in your browser
+          Data from <a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a> • Runs entirely in your browser
         </small>
-    </footer>
+      </footer>
+    </div>
 
-    <script src="./src/main.js ">
-
-    </script>
+    <script src="./src/uiMain.js" type="module"></script>
   </body>
 </html>

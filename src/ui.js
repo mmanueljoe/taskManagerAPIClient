@@ -1,4 +1,4 @@
-import { getElementByType } from "./utils";
+import { getElementByType } from "./utils.js";
 
 export class UI {
   constructor() {
@@ -107,18 +107,18 @@ export class UI {
             <h3>Statistics</h3>
             <div class='stats'>
                 <div class='stat'>
-                    <div>Total</div><strong>${stats.total}</strong>
+                    <div>Total</div><strong>${stats.totalTasks}</strong>
                 <div>
-                div class="stat">
-                    <div>Completed</div><strong>${stats.completed}</strong>
+                <div class='stat'>
+                    <div>Completed</div><strong>${stats.completedTasks}</strong>
                 </div>
-                <div class="stat">
-                    <div>Pending</div><strong>${stats.pending}</strong>
+                <div class='stat'>
+                    <div>Pending</div><strong>${stats.pendingTasks}</strong>
                 </div>
-                <div class="stat">
-                    <div>Overdue (demo)</div><strong>${stats.overdue}</strong>
+                <div class='stat'>
+                    <div>Overdue</div><strong>${stats.overdueTasks}</strong>
                 </div>
-                <div class="stat">
+                <div class='stat'>
                     <div>Unique users</div><strong>${stats.uniqueUsers}</strong>
                 </div>
             </div>
@@ -205,11 +205,11 @@ export class UI {
     }
 
     if(onPending){
-        this.elements.addEventListener('click', onPending);
+        this.elements.pending.addEventListener('click', onPending);
     }
 
     if(onCompleted){
-        this.elements.addEventListener('click', onCompleted);
+        this.elements.completed.addEventListener('click', onCompleted);
     }
 
     if(onSearch){
