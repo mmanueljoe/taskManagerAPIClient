@@ -13,7 +13,7 @@ async function main() {
     await manager.load({ useCache: true });
   } catch (err) {
     console.error("Failed to load data: ", err.message);
-    process.exit(1);
+    return;
   }
 
   await runCLI(manager);
@@ -21,5 +21,5 @@ async function main() {
 
 main().catch((err) => {
   console.log("Fatal: ", err.message);
-  process.exit(1);
+  return;
 });
