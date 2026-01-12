@@ -122,7 +122,7 @@ describe('calculateStatistics', () => {
             new Task({ id: 5, title: 'Task 5', completed: false, userId: 3 })
         ];
         // set one task as overdue
-        tasks[1].timeStamp = new Date(Date.now() - 8 * 24 * 60 * 60 * 1000);
+        tasks[1].timeStamp = new Date(Date.now() - (10 * 24 * 60 * 60 * 1000));
     
         const stats = calculateStatistics(tasks);
     
