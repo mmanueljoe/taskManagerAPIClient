@@ -38,6 +38,7 @@ export class PriorityTask extends Task{
 
     // override for priority-aware overdue logic
     isOverdue(){
+        
         if(!this.dueDate) return super.isOverdue();
 
         return Date.now() > this.dueDate.getTime() && !this.completed;
